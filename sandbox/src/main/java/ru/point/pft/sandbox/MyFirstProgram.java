@@ -4,9 +4,10 @@ public class MyFirstProgram {
 
 public static void main (String[] args){
 
-    Point a = new Point(1.0,1.0);
+    Point a = new Point(3.0,1.0);
     Point b = new Point(2.0,2.0);
     System.out.println("Расстояние между двумя точками " + distance(a, b));
+    System.out.println("Расстояние между двумя точками " + a.distance(b));
 }
 
 public static double distance(Point p1, Point p2) {
