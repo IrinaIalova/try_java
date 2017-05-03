@@ -32,7 +32,7 @@ public class ContactHelper extends HelperBase {
         click(By.id("logo"));
     }
 
-    public void editContact() {
+    public void selectContact() {
         click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[8]/a/img"));
     }
 
