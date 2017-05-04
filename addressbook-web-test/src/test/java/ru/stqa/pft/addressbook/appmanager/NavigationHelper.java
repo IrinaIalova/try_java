@@ -20,4 +20,6 @@ public class NavigationHelper extends HelperBase{
         click(By.linkText("groups"));
     }
 
+    public void closeAlert() { wd.switchTo().alert().accept(); }
+
 }
