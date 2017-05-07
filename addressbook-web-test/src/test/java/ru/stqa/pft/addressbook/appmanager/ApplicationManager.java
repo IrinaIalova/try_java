@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -25,16 +26,15 @@ public class ApplicationManager {
     }
 
     public void init() {
-        if (browser == BrowserType.FIREFOX){
+        if (Objects.equals(browser, BrowserType.FIREFOX)){
         wd = new FirefoxDriver();
-        } else if (browser == BrowserType.CHROME){
+        } else if (browser.equals(BrowserType.CHROME)){
             wd = new ChromeDriver();
-        } else if (browser == BrowserType.SAFARI) {
+        } else if (browser.equals(BrowserType.SAFARI)) {
             wd = new SafariDriver();
+        }
 
-            }
-
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        //wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/index.php");
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
