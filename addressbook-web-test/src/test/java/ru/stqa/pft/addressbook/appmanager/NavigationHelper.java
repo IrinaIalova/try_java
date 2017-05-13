@@ -13,12 +13,9 @@ public class NavigationHelper extends HelperBase{
         super(wd);
     }
 
-    public void gotoAddPage() {
-        if (isElementPresent(By.tagName("h1"))
-                && wd.findElement(By.tagName("h1")).getText().equals("Edit / add address book entry")){
-            return;
-    }
-        click(By.linkText("add new"));
+    //Переход на главную страницу со списком контактов
+    public void gotoAdressBook() {
+        click(By.id("logo"));
     }
 
     public void gotoGroupPage() {

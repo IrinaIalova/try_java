@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class ContactDeletionTestsOne extends TestBase {
     @Test
     public void testContactdeletionOne() {
-    app.getContactHelper().gotoAdressBook();
+    app.getContactHelper().gotoAddNew();
     app.getContactHelper().selectContact();
     app.getContactHelper().deleteContactFromForm();
     }

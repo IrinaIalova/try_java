@@ -37,8 +37,8 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
-    public void gotoAdressBook() {
-        click(By.id("logo"));
+    public void gotoAddNew () {
+        click(By.linkText("add new"));
     }
 
     public void selectContact() {
@@ -61,4 +61,14 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
     }
 
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+    }
+
+    //Будет падать, если нет группы с названием testNew
+    public void createContact(ContactData contact, boolean bla) {
+        gotoAddNew();
+        fillContactForm(contact, bla);
+        submitContactForm();
+    }
 }

@@ -9,7 +9,7 @@ import ru.stqa.pft.addressbook.model.ContactData;
 public class ContactModificationTests extends TestBase {
     @Test
     public void testContactModification(){
-        app.getContactHelper().gotoAdressBook();
+        app.getContactHelper().gotoAddNew();
         app.getContactHelper().selectContact();
         app.getContactHelper().fillContactForm(new ContactData("lena", "ivanovna",
                 "ialova", "iriska","produkt", "15", null), false);
