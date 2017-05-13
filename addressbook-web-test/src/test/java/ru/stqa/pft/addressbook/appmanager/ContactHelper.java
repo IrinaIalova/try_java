@@ -25,7 +25,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("address"),contactData.getAdress());
         type(By.name("home"),contactData.getHome());
 
-
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
@@ -41,8 +40,9 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void selectContact() {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[8]/a/img"));
+//выбирает контакт, кликая на иконку редактирования для первого контакта
+     public void selectContact() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
     }
 
     public void editContactForm() {
@@ -53,9 +53,8 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form[2]/input[2]"));
     }
 
-    public void markContact() {
-        click(By.name("selected[]"));
-    }
+//выбирает первый контакт из списка, кликает на чекбокс в первом столбце
+    public void markContact() {click(By.name("selected[]"));}
 
     public void deleteContactFromList() {
         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));

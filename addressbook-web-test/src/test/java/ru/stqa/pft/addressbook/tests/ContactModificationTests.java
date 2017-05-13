@@ -9,10 +9,16 @@ import ru.stqa.pft.addressbook.model.ContactData;
 public class ContactModificationTests extends TestBase {
     @Test
     public void testContactModification(){
-        app.getContactHelper().gotoAddNew();
+        app.getNavigationHelper().gotoAdressBook();
+        if (! app.getContactHelper().isThereAContact()){
+            app.getContactHelper().createContact(new ContactData("irina", "ivanovna",
+                    "ialova", "iriska","produkt", "56","testNew"), true);
+        }
+        //модифицирую позже, лучше в конце создания контакта переходить на домашнюю страницу по ссылке home
+        app.getNavigationHelper().gotoAdressBook();
         app.getContactHelper().selectContact();
         app.getContactHelper().fillContactForm(new ContactData("lena", "ivanovna",
-                "ialova", "iriska","produkt", "15", null), false);
+                "ialova", "iriska","produkt", "10", null), false);
         app.getContactHelper().editContactForm();
     }
 }
